@@ -209,8 +209,8 @@ service:
 
 ingress:
   enabled: true
-  ingressClassName: ~
-  annotations:
+  ingressClassName: nginx
+  annotations:  
     kubernetes.io/tls-acme: "true"
     # Extend timeout to allow long running queries.
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
@@ -779,7 +779,11 @@ init:
   podSecurityContext: {}
   containerSecurityContext: {}
   ## Tolerations to be added to init job pods
-  tolerations: []
+ tolerations:
+  - key: "superset"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
   ## Affinity to be added to init job pods
   affinity: {}
   # -- TopologySpreadConstrains to be added to init job
