@@ -211,15 +211,15 @@ ingress:
   enabled: true
   ingressClassName: ~
   annotations: {}
-    # kubernetes.io/tls-acme: "true"
-    ## Extend timeout to allow long running queries.
-    # nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
-    # nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
-    # nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    kubernetes.io/tls-acme: "true"
+    # Extend timeout to allow long running queries.
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
   path: /
   pathType: ImplementationSpecific
   hosts:
-    - chart-example.local
+    - analytics.drivex.co.in
   tls: []
   extraHostsRaw: []
   #  - secretName: chart-example-tls
