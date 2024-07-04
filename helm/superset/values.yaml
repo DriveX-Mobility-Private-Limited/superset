@@ -208,7 +208,7 @@ service:
     http: nil
 
 ingress:
-  enabled: false
+  enabled: true
   ingressClassName: ~
   annotations: {}
     # kubernetes.io/tls-acme: "true"
