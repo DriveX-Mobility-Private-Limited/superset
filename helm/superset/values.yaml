@@ -99,8 +99,9 @@ extraSecretEnv: {}
   # # Google API Keys: https://console.cloud.google.com/apis/credentials
   # GOOGLE_KEY: ...
   # GOOGLE_SECRET: ...
-   SUPERSET_SECRET_KEY:'PYh+Hoxz/RfKJhnPJtrWneuGDhGJ3Iw80lGOeWZwTBsfi+Fn0E7MHi0g'
-  
+  #   # Generate your own secret key for encryption. Use openssl rand -base64 42 to generate a good key
+  #  SUPERSET_SECRET_KEY: 'CHANGE_ME_TO_A_COMPLEX_RANDOM_SECRET'
+
 # -- Extra files to mount on `/app/pythonpath`
 extraConfigs: {}
   # import_datasources.yaml: |
@@ -162,15 +163,16 @@ configOverrides: {}
   #           }
   #       }
   #   ]
-    # Map Authlib roles to superset roles
-    AUTH_ROLE_ADMIN = 'Admin'
-    AUTH_ROLE_PUBLIC = 'Public'
-    # Will allow user self registration, allowing to create Flask users from Authorized User
-    AUTH_USER_REGISTRATION = True
-    AUTH_USER_REGISTRATION_ROLE = "Admin"
-  secret: |
-    # Generate your own secret key for encryption. Use `openssl rand -base64 42` to generate a good key
-    SECRET_KEY = 'PYh+Hoxz/RfKJhnPJtrWneuGDhGJ3Iw80lGOeWZwTBsfi+Fn0E7MHi0g'
+  #   # Map Authlib roles to superset roles
+  #   AUTH_ROLE_ADMIN = 'Admin'
+  #   AUTH_ROLE_PUBLIC = 'Public'
+  #   # Will allow user self registration, allowing to create Flask users from Authorized User
+  #   AUTH_USER_REGISTRATION = True
+  #   # The default user self registration role
+  #   AUTH_USER_REGISTRATION_ROLE = "Admin"
+  # secret: |
+  #   # Generate your own secret key for encryption. Use `openssl rand -base64 42` to generate a good key
+  #   SECRET_KEY = 'CHANGE_ME_TO_A_COMPLEX_RANDOM_SECRET'
 
 # -- Same as above but the values are files
 configOverridesFiles: {}
