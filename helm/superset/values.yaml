@@ -94,14 +94,13 @@ extraEnvRaw: []
   #       key: password
 
 # -- Extra environment variables to pass as secrets
-extraSecretEnv: {}
+extraSecretEnv:
   # MAPBOX_API_KEY: ...
-  # # Google API Keys: https://console.cloud.google.com/apis/credentials
   # GOOGLE_KEY: ...
   # GOOGLE_SECRET: ...
-  #   # Generate your own secret key for encryption. Use openssl rand -base64 42 to generate a good key
+  # Generate your own secret key for encryption. Use openssl rand -base64 42 to generate a good key
   SUPERSET_SECRET_KEY: 'PYh+Hoxz/RfKJhnPJtrWneuGDhGJ3Iw80lGOeWZwTBsfi+Fn0E7MHi0g'
-
+  
 # -- Extra files to mount on `/app/pythonpath`
 extraConfigs: {}
   # import_datasources.yaml: |
@@ -171,7 +170,7 @@ configOverrides: {}
   #   # The default user self registration role
   #   AUTH_USER_REGISTRATION_ROLE = "Admin"
   secret: |
-  #   # Generate your own secret key for encryption. Use `openssl rand -base64 42` to generate a good key
+    # Generate your own secret key for encryption. Use `openssl rand -base64 42` to generate a good key
     SECRET_KEY = 'PYh+Hoxz/RfKJhnPJtrWneuGDhGJ3Iw80lGOeWZwTBsfi+Fn0E7MHi0g'
 
 # -- Same as above but the values are files
